@@ -1,17 +1,18 @@
+from genshi.builder import tag
+
 from trac.core import *
-from trac.util.html import html
 from trac.web import IRequestHandler
-from trac.web.chrome import INavigationContributor
+from trac.web.chrome import INavigationContributor, ITemplateProvider
 
 class TicketGanttPlugin(Component):
-    implements(INavigationContributor, IRequestHandler)
+    implements(INavigationContributor, IRequestHandler, ITemplateProvider)
 
     # INavigationContributor methods
     def get_active_navigation_item(self, req):
         return 'ticketgantt'
     def get_navigation_items(self, req):
         yield ('mainnav', 'ticketgantt',
-            html.A('Gantt Ticket', href= req.href.ticketgantt()))
+            tag.a('Gantt Ticket', href= req.href.ticketgantt()))
 
     # IRequestHandler methods
     def match_request(self, req):
