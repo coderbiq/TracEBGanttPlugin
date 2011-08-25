@@ -25,3 +25,7 @@ class TicketGanttPlugin(Component):
         req.send_header('Content-Length', len(content))
         req.end_headers()
         req.write(content)
+
+    def get_templates_dirs(self):
+        from pkg_resources import resource_filename
+        return [resource_filename(__name__, 'templates')]
