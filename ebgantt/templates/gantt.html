@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="layout.html" />
+  <xi:include href="macros.html" />
+<head>
+<script language="javascript">
+$(function(){
+    SFAjax.loadXml("http://127.0.0.1/trac/test/ticketgantt?action=getData",onGanttLoaded);
+    function onGanttLoaded(doc)
+	{
+        alert(doc);
+/*		var gtConfig=new SFConfig();
+        gtConfig.setConfig("SFGantt/container","Div_Gantt");
+        var gtData=new SFData(new SFDataProject(doc));
+        var gtMap=new SFGantt(gtConfig,gtData);
+		gtMap.showMap(null,3);*/
+	}
+});
+</script>
+</head>
+<body>
+<div id="content">
+	<div id="Div_Gantt" style="position:relative;width:890px;height:400px;border:solid 1px black"></div>
+</div>
+</body>
+</html>
