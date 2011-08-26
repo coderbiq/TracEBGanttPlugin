@@ -14,12 +14,22 @@
         <Task>
             <UID>1</UID>
             <ID>1</ID>
-            <Name>单户住宅: 建筑师设计(280 平方米，并带有完整地下室)</Name>
+            <Name>单户住宅: 建筑师设计</Name>
             <OutlineNumber>1</OutlineNumber>
             <Start>2004-01-01T08:00:00</Start>
             <Finish>2004-07-30T17:00:00</Finish>
             <Summary>1</Summary>
             <PercentComplete>0</PercentComplete>
+        </Task>
+        <Task>
+            <UID>2</UID>
+            <ID>2</ID>
+            <Name>单户住宅2: 建筑师设计</Name>
+            <OutlineNumber>1.1</OutlineNumber>
+            <Start>2004-01-01T08:00:00</Start>
+            <Finish>2004-07-30T17:00:00</Finish>
+            <Summary>0</Summary>
+            <PercentComplete>1</PercentComplete>
         </Task>
 </Tasks>
 </SFGantt>
