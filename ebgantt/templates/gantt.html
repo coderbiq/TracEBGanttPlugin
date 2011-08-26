@@ -4,17 +4,17 @@
   <xi:include href="layout.html" />
   <xi:include href="macros.html" />
 <head>
+<script language="javascript" src="http://www.51diaodu.cn/sfgantt/js/gantt.js.aspx" charset="utf-8"></script>
 <script language="javascript">
 $(function(){
-    SFAjax.loadXml("http://127.0.0.1/trac/test/ticketgantt?action=getData",onGanttLoaded);
+    SFAjax.loadXml("?action=getData",onGanttLoaded);
     function onGanttLoaded(doc)
 	{
-        alert(doc);
-/*		var gtConfig=new SFConfig();
+		var gtConfig=new SFConfig();
         gtConfig.setConfig("SFGantt/container","Div_Gantt");
         var gtData=new SFData(new SFDataProject(doc));
         var gtMap=new SFGantt(gtConfig,gtData);
-		gtMap.showMap(null,3);*/
+		gtMap.showMap(null,3);
 	}
 });
 </script>

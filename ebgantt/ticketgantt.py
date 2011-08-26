@@ -31,11 +31,11 @@ class TicketGanttPlugin(Component):
         return re
 
     def show_main(self, req):
-        add_script(req, 'ebgantt/js/gantt.js')
+        #add_script(req, 'ebgantt/js/gantt.js')
         return 'gantt.html', {}, None
 
     def get_data(self, req):
-        return 'ganttdata.xml', {}, 'test/xml'
+        return 'ganttdata.xml', {}, 'text/xml'
 
     def get_templates_dirs(self):
         return [resource_filename(__name__, 'templates')]
