@@ -2,7 +2,7 @@ from genshi.builder import tag
 
 from trac.core import *
 from trac.web import IRequestHandler
-from trac.web.chrome import INavigationContributor, ITemplateProvider
+from trac.web.chrome import INavigationContributor, ITemplateProvider, add_script
 from pkg_resources import resource_filename
 
 class TicketGanttPlugin(Component):
@@ -15,15 +15,6 @@ class TicketGanttPlugin(Component):
     def get_navigation_items(self, req):
         yield ('mainnav', 'ticketgantt',
             tag.a('Gantt Ticket', href= req.href.ticketgantt()))
-
-    def pre_process_request(self, req, handler):
-        # I think we should look for a TracJSGantt on the page and set
-        # a flag for the post_process_request handler if found
-        return handler
-
-    def post_process_request(self, req, template, data, content_type):
-#        add_script(req, 'ebgantt/js/jsgantt.js')
-        return template, data, content_type
 
     # IRequestHandler methods
     def match_request(self, req):
@@ -40,6 +31,7 @@ class TicketGanttPlugin(Component):
         return re
 
     def show_main(self, req):
+        add_script(req, 'ebgantt/js/gantt.js')
         return 'gantt.html', {}, None
 
     def get_data(self, req):

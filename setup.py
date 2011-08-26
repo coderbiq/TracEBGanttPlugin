@@ -7,5 +7,5 @@ setup(
         [trac.plugins]
         ebgantt.ticketgantt = ebgantt.ticketgantt
     """,
-    package_data={'ebgantt': ['templates/*.html']},
+    package_data={'ebgantt': ['templates/*.html','htdocs/*']},
 )
